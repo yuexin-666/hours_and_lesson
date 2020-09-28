@@ -18,6 +18,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
+  //已删除
 ]
 
 const router = new VueRouter({
