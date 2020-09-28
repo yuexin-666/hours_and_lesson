@@ -36,6 +36,7 @@ const routes = [
     name: 'user',
     component: () => import('../views/user/User.vue')
   }
+  //已删除
 ]
 
 const router = new VueRouter({
