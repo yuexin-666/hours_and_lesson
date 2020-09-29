@@ -6,7 +6,10 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
 
+import axios from 'axios'
+
 Vue.config.productionTip = false
+Vue.prototype.$axios=axios
 
 new Vue({
   router,
