@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="pricate">
     <div class="pricate_nav">练习</div>
     <div class="pricate_list">
@@ -26,11 +27,16 @@
         </div>
       </div>
     </div>
+=======
+  <div>
+    
+>>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
   </div>
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   data() {
     return {
       imgList: [
@@ -130,4 +136,12 @@ export default {
   justify-content: center;
   line-height: 1rem;
 }
+=======
+
+}
+</script>
+
+<style>
+
+>>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
 </style>

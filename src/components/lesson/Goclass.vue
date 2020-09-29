@@ -1,0 +1,27 @@
+<template>
+  <div>
+     <div>
+       <div class="Goclass_button">
+           <button class="Goclass_button_button">立即约课</button>
+       </div>
+     </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.Goclass_button_button{
+  background: rgb(235, 97, 0);
+  border: none;
+  color: white;
+  margin-left:2.9rem ;
+  margin-top:4.5rem ;
+  font-size:0.35rem;
+  font-weight:100 ;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>111</h1>
+    已取消
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

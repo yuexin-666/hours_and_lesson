@@ -29,9 +29,19 @@ const routes = [
     path: '/lessonHistory',
     name: 'lessonHistory',
     component: () => import('../views/lessonHistory/LessonHistory.vue'),
+<<<<<<< HEAD
     meta:{
       tabberShow:true
     }
+=======
+    children:[
+      {
+        path:'/oto',
+        name:'oto',
+        component:()=>import('../views/lessonHistory/oto/Oto.vue')
+      }
+    ]
+>>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
   },
   //练习
   {
