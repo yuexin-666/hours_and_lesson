@@ -26,6 +26,12 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+  <div>
+    
+  </div>
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
   </div>
 </template>
 
@@ -130,4 +136,10 @@ export default {
   justify-content: center;
   line-height: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
 </style>

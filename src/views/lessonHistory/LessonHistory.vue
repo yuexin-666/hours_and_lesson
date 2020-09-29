@@ -85,5 +85,9 @@ export default {
   color: gray;
   line-height: 0.9rem;
 }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
 </style>
