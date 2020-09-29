@@ -22,7 +22,14 @@ const routes = [
   {
     path: '/lessonHistory',
     name: 'lessonHistory',
-    component: () => import('../views/lessonHistory/LessonHistory.vue')
+    component: () => import('../views/lessonHistory/LessonHistory.vue'),
+    children:[
+      {
+        path:'/oto',
+        name:'oto',
+        component:()=>import('../views/lessonHistory/oto/Oto.vue')
+      }
+    ]
   },
   //练习
   {
