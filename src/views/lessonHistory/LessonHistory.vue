@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div class="Less_header">
       <div class="Less_header_top">约课记录</div>
@@ -86,17 +85,5 @@ export default {
   color: gray;
   line-height: 0.9rem;
 }
-=======
-  <div></div>
-</template>
 
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
->>>>>>> adc9fc0f85e8068044681322aa1d241926cb3d67
 </style>
