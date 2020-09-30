@@ -207,6 +207,7 @@ export default {
     color: lightgreen;
     margin-left: 4rem;
 }
+<<<<<<< HEAD
 .teacher_img{
   display: flex;
   justify-content: flex-start;
@@ -216,4 +217,11 @@ export default {
   width: 0.8rem;
   height: 0.8rem;
 }
+=======
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 </style>
