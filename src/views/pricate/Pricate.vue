@@ -26,7 +26,19 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  <div>
+    
+  </div>
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
   </div>
 </template>
 
@@ -42,7 +54,7 @@ export default {
         },
         {
           img: require("../../../public/img/套卷练习.png"),
-          title: "套卷练习", 
+          title: "套卷练习",
           path: "/test",
         },
         {
@@ -131,4 +143,16 @@ export default {
   justify-content: center;
   line-height: 1rem;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 </style>

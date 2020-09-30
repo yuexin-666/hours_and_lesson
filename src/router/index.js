@@ -12,7 +12,19 @@ const routes = [
     component: Home,
     meta:{
       tabberShow:true
-    }
+    },
+  },
+  // 一对一辅导
+  {
+    path: '/tutoring',
+    name: 'Home',
+    component: () => import('../views/home/components/Tutoring.vue'),
+  },
+  // 学习日历
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: () => import('../views/home/components/Calendar.vue'),
   },
   //课程
   {
@@ -32,6 +44,7 @@ const routes = [
     meta:{
       tabberShow:true
     },
+<<<<<<< HEAD
   },
      //一对一辅导
       {
@@ -57,6 +70,16 @@ const routes = [
         name:'teacher',
         component:()=>import('../views/lessonHistory/Teacher.vue')
       },
+=======
+    children:[
+      {
+        path:'/oto',
+        name:'oto',
+        component:()=>import('../views/lessonHistory/oto/Oto.vue')
+      }
+    ]
+  },
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
   //练习
   {
     path: '/pricate',
