@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
+    <!-- <router-view/> -->
+    <!-- <tabBar v-show="$route.meta.tabberShow"/> -->
+    <router-view />
+=======
     <router-view/>
     <tabBar v-show="$route.meta.tabberShow"/>
 <<<<<<< HEAD

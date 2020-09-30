@@ -68,6 +68,33 @@ const routes = [
     meta:{
       tabberShow:true
     },
+<<<<<<< HEAD
+  },
+     //一对一辅导
+      {
+        path:'/oto',
+        name:'oto',
+        component:()=>import('../views/lessonHistory/Oto.vue')
+      },
+      //约课搜索
+      {
+        path:'/serch',
+        name:'serch',
+        component:()=>import('../views/lessonHistory/Serch.vue')
+      },
+      //预约课程
+      {
+        path:'/plan',
+        name:'plan',
+        component:()=>import('../views/lessonHistory/Plan.vue')
+      },
+      //讲师详情
+      {
+        path:'/teacher',
+        name:'teacher',
+        component:()=>import('../views/lessonHistory/Teacher.vue')
+      },
+=======
     children:[
 >>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
       {
@@ -77,6 +104,7 @@ const routes = [
       }
     ]
   },
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
   //练习
   {
     path: '/pricate',

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 <template>
   <div>
     <!-- 顶部 -->
@@ -206,6 +210,10 @@ export default {
     font-size: 0.32rem;
     color: lightgreen;
     margin-left: 4rem;
+<<<<<<< HEAD
+} 
+</style>>
+=======
 }
 <<<<<<< HEAD
 .teacher_img{
@@ -223,5 +231,10 @@ export default {
 
 =======
 >>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
+<<<<<<< HEAD
 >>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 </style>
+=======
+</style>
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
+>>>>>>> aacbc6b1b3d3a63e47865ba5711bae4311f5726c

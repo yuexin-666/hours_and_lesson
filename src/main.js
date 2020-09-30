@@ -7,9 +7,17 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 import axios from 'axios'
 
 Vue.prototype.$axios=axios
+=======
+
+import axios from 'axios'
+
+Vue.prototype.$axios=axios
+
+>>>>>>> aacbc6b1b3d3a63e47865ba5711bae4311f5726c
 =======
 <<<<<<< HEAD
 import axios from 'axios'

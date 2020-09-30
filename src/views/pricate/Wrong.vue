@@ -1,4 +1,7 @@
 <template>
+<<<<<<< HEAD
+  <div>232423</div>
+=======
   <div class="paper">
     <div>
       <Nav></Nav>
@@ -8,6 +11,7 @@
   <van-dropdown-item v-model="value2" :options="option2" />
 </van-dropdown-menu></div>
   </div>
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 </template>
 
 <script>
