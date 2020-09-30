@@ -22,6 +22,6 @@ export default {
 
 <style scoped>
 .iconfont {
-    font-size: .3rem;
+    font-size: 0.3rem;
 }
 </style>
