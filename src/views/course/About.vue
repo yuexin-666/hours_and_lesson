@@ -7,8 +7,6 @@
           <van-icon name="search" size="18" color="black" />
         </template>
       </van-nav-bar>
-
-      <van-divider :hairline="false" />
     </div>
 
     <!-- 排序 -->

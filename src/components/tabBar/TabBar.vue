@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-tabbar v-model="active" active-color="#FF7F16">
+    <van-tabbar v-model="active" active-color="#FF7F16" route>
       <van-tabbar-item class="iconfont icon-xueshimao" to="/">首页</van-tabbar-item>
       <van-tabbar-item class="iconfont icon-shu" to="/about">课程</van-tabbar-item>
       <van-tabbar-item class="iconfont icon-shouzhi" to="/lessonHistory">约课记录</van-tabbar-item>

@@ -5,7 +5,7 @@
         <div class="tab">
           <div class="info">
             <div class="login">
-              <div class="avatar">
+              <div class="avatar" @click.prevent="goOther('/info')">
                 <img
                   src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/avatar.jpg"
                   alt=""
@@ -13,37 +13,37 @@
               </div>
               <div class="extra">
                 <div class="name">
-                  <span>135*****9999</span>
+                  <span @click="goOther('/login')">登录/注册</span>
                 </div>
                 <p><van-icon name="edit" /></p>
               </div>
             </div>
           </div>
           <div class="mine">
-            <div class="mine_item">
+            <div class="mine_item" @click="goOther('/myStudy')">
               <p class="mine_item_count">1</p>
               <p class="mine_item_name">我的特色课</p>
               <p class="mine_item_note">已购特色课程的学习</p>
             </div>
-            <div class="mine_item">
+            <div class="mine_item" @click="goOther('/lessonHistory')">
               <p class="mine_item_count">0</p>
               <p class="mine_item_name">一对一辅导</p>
               <p class="mine_item_note">我的一对一老师辅导</p>
             </div>
-            <div class="mine_item">
+            <div class="mine_item" @click="goOther('/currency')">
               <p class="mine_item_count">0.00</p>
               <p class="mine_item_name">剩余学习币</p>
               <p class="mine_item_note">查看剩余学习币</p>
             </div>
           </div>
           <div class="to_set">
-            <span>去约课</span>
+            <span @click="goOther('/coach')">去约课</span>
           </div>
         </div>
       </div>
 
       <div class="to_share">
-        <div class="to_share_box">
+        <div class="to_share_box" @click="show = true">
           <span>
             <van-icon name="send-gift-o" />
           </span>
@@ -60,13 +60,13 @@
         <div class="menu_box_item">
           <div class="menu_box_item_title">课程相关</div>
           <div class="menu_box_item_contant">
-            <van-grid gutter="" icon-size="40px" column-num=3>
-              <van-grid-item text="关注的老师">
+            <van-grid gutter="" icon-size="40px" column-num="3">
+              <van-grid-item text="关注的老师" @click="goOther('/concern')">
                 <template #icon>
                   <span class="iconfont icon-Icon_wode"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="我的收藏">
+              <van-grid-item text="我的收藏" @click="goOther('/collect')">
                 <template #icon>
                   <span class="iconfont icon-xingxing"></span>
                 </template>
@@ -78,18 +78,18 @@
         <div class="menu_box_item">
           <div class="menu_box_item_title">订单相关</div>
           <div class="menu_box_item_contant">
-            <van-grid gutter="" icon-size="40px" column-num=4>
-              <van-grid-item text="课程订单">
+            <van-grid gutter="" icon-size="40px" column-num="4">
+              <van-grid-item text="课程订单" @click="goOrder(1)">
                 <template #icon>
                   <span class="iconfont icon-dingdan1"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="会员订单">
+              <van-grid-item text="会员订单" @click="goOrder(2)">
                 <template #icon>
                   <span class="iconfont icon-dingdan1"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="约课订单">
+              <van-grid-item text="约课订单" @click="goOrder(3)">
                 <template #icon>
                   <span class="iconfont icon-dingdan1"></span>
                 </template>
@@ -101,15 +101,15 @@
         <div class="menu_box_item">
           <div class="menu_box_item_title">我的账户</div>
           <div class="menu_box_item_contant">
-            <van-grid gutter="" icon-size="40px" column-num=4>
-              <van-grid-item text="优惠卷">
+            <van-grid gutter="" icon-size="40px" column-num="4">
+              <van-grid-item text="优惠卷" @click="goOther('/coupon')">
                 <template #icon>
                   <span class="iconfont icon-youhuijuan"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="学习卡">
+              <van-grid-item text="学习卡" @click="goOther('/userCard')">
                 <template #icon>
-                  <span class="iconfont icon-icon-test"></span>
+                  <span class="iconfont icon-icon-test"></span> 
                 </template>
               </van-grid-item>
               <van-grid-item text="会员">
@@ -124,7 +124,7 @@
         <div class="menu_box_item">
           <div class="menu_box_item_title">自助服务</div>
           <div class="menu_box_item_contant">
-            <van-grid gutter="" icon-size="40px" column-num=4>
+            <van-grid gutter="" icon-size="40px" column-num="4">
               <van-grid-item text="我的消息">
                 <template #icon>
                   <span class="iconfont icon-wodexiaoxi"></span>
@@ -144,13 +144,49 @@
           </div>
         </div>
       </div>
+
       <div class="bottom_b"></div>
     </div>
+
+
+
+    <van-overlay :show="show" @click="show = false" z-index="300">
+      <div class="wrapper">
+        <div class="block">
+          <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2020RSph8UnBIH1601365794.png" alt="">
+        </div>
+      </div>
+    </van-overlay>
+
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
+  methods: {
+    goCoach() {
+      console.log("goCoach");
+    },
+    goOther(path){
+      this.$router.push({
+        path
+      })
+    },
+    goOrder(val){
+      this.$router.push({
+        path:"/order",
+        query:{
+          val
+        }
+      })
+    }
+  },
+};
 </script>
 
 <style scoped>
@@ -303,25 +339,40 @@ export default {};
 }
 .menu_box {
   width: 100%;
-  padding: 0 .4rem;
+  padding: 0 0.4rem;
   background-color: #fff;
   box-sizing: border-box;
-
 }
 .menu_box_item_title {
   font-size: 0.32rem;
   margin: 0rem;
 }
-.menu_box_item{
-    padding: .13333rem 0;
-    margin: 0rem;
-    border-bottom: 1px solid #eee;
+.menu_box_item {
+  padding: 0.13333rem 0;
+  margin: 0rem;
+  border-bottom: 1px solid #eee;
 }
-.menu_box_item_contant .iconfont{
-    color: #FFAF00;
+.menu_box_item_contant .iconfont {
+  color: #ffaf00;
 }
-.bottom_b{
-    height: 2rem;
-    background-color: #fff;
+.bottom_b {
+  height: 2rem;
+  background-color: #fff;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 90%;
+  height: 90vh;
+  background-color: #fff;
+}
+.block img{
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 #app {
-  font-size: 0.48rem;
+  font-size: 0.24rem;
 }
 .leaveMsg {
   width: 1.35rem;
