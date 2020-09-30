@@ -10,9 +10,33 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+<<<<<<< HEAD
     meta: {
       tabberShow: true
     }
+=======
+<<<<<<< HEAD
+    meta: {
+      tabberShow: true
+    }
+=======
+    meta:{
+      tabberShow:true
+    },
+  },
+  // 一对一辅导
+  {
+    path: '/tutoring',
+    name: 'Home',
+    component: () => import('../views/home/components/Tutoring.vue'),
+  },
+  // 学习日历
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: () => import('../views/home/components/Calendar.vue'),
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
+>>>>>>> e1cc1b39262f306b15390511055be7e022f67ada
   },
   //课程
   {
@@ -22,13 +46,30 @@ const routes = [
     meta: {
       tabberShow: true
     }
+<<<<<<< HEAD
 
+=======
+  }, 
+  {
+    path: '/lessondetails',//跳转至课程详情页
+    name: 'lessondetails',
+    component: () => import('../views/course/details/LessonDetails.vue'),
+  },
+  {
+    path: '/teacherdetails',//跳转至讲师详情页
+    name: 'teacherdetails',
+    component: () => import('../views/course/details/TeacherDetails.vue'),
+    meta: {
+      tabberShow: false
+    },
+>>>>>>> e1cc1b39262f306b15390511055be7e022f67ada
   },
   //约课记录
   {
     path: '/lessonHistory',
     name: 'lessonHistory',
     component: () => import('../views/lessonHistory/LessonHistory.vue'),
+<<<<<<< HEAD
     meta: {
       tabberShow: true
     },
@@ -37,7 +78,54 @@ const routes = [
       name: 'oto',
       component: () => import('../views/lessonHistory/oto/Oto.vue')
     }]
+=======
+<<<<<<< HEAD
+    meta: {
+      tabberShow: true
+    },
+    children: [
+=======
+    meta:{
+      tabberShow:true
+    },
+<<<<<<< HEAD
   },
+     //一对一辅导
+      {
+        path:'/oto',
+        name:'oto',
+        component:()=>import('../views/lessonHistory/Oto.vue')
+      },
+      //约课搜索
+      {
+        path:'/serch',
+        name:'serch',
+        component:()=>import('../views/lessonHistory/Serch.vue')
+      },
+      //预约课程
+      {
+        path:'/plan',
+        name:'plan',
+        component:()=>import('../views/lessonHistory/Plan.vue')
+      },
+      //讲师详情
+      {
+        path:'/teacher',
+        name:'teacher',
+        component:()=>import('../views/lessonHistory/Teacher.vue')
+      },
+=======
+    children:[
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
+      {
+        path: '/oto',
+        name: 'oto',
+        component: () => import('../views/lessonHistory/oto/Oto.vue')
+      }
+    ]
+>>>>>>> e1cc1b39262f306b15390511055be7e022f67ada
+  },
+>>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
   //练习
   {
     path: '/pricate',
@@ -86,6 +174,7 @@ const routes = [
     component: () => import('../views/user/User.vue'),
     meta: {
       tabberShow: true
+<<<<<<< HEAD
     }
   },
   //登录页面
@@ -194,6 +283,8 @@ const routes = [
     component: () => import('../views/login/UserVip.vue'),
     meta: {
       tabberShow: false
+=======
+>>>>>>> e1cc1b39262f306b15390511055be7e022f67ada
     }
   }
 ]
