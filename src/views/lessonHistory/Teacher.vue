@@ -1,6 +1,6 @@
 <template>
   <div>
-     跳过来了
+    讲师详情
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

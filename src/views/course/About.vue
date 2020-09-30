@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <template>
   <div>
     <!-- 顶部 -->
@@ -240,19 +240,5 @@ export default {
     font-size: 0.32rem;
     color: lightgreen;
     margin-left: 4rem;
-}
-=======
-<template>
-  <div></div>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
->>>>>>> f8fa54b46045db3e941a476dfa3a3a9196669510
-</style>
+} 
+</style>>

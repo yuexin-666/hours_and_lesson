@@ -29,20 +29,34 @@ const routes = [
     path: '/lessonHistory',
     name: 'lessonHistory',
     component: () => import('../views/lessonHistory/LessonHistory.vue'),
-<<<<<<< HEAD
     meta:{
       tabberShow:true
-    }
-=======
-    children:[
+    },
+  },
+     //一对一辅导
       {
         path:'/oto',
         name:'oto',
-        component:()=>import('../views/lessonHistory/oto/Oto.vue')
-      }
-    ]
->>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
-  },
+        component:()=>import('../views/lessonHistory/Oto.vue')
+      },
+      //约课搜索
+      {
+        path:'/serch',
+        name:'serch',
+        component:()=>import('../views/lessonHistory/Serch.vue')
+      },
+      //预约课程
+      {
+        path:'/plan',
+        name:'plan',
+        component:()=>import('../views/lessonHistory/Plan.vue')
+      },
+      //讲师详情
+      {
+        path:'/teacher',
+        name:'teacher',
+        component:()=>import('../views/lessonHistory/Teacher.vue')
+      },
   //练习
   {
     path: '/pricate',

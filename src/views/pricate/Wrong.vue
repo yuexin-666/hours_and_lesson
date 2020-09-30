@@ -1,6 +1,5 @@
 <template>
-  <div>
-  <div>232423</div></div>
+  <div>232423</div>
 </template>
 
 <script>

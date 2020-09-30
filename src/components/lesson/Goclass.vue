@@ -1,8 +1,8 @@
 <template>
   <div>
      <div>
-       <div class="Goclass_button">
-           <button class="Goclass_button_button">立即约课</button>
+       <div class="Classes_button">
+           <button @click="tiao" class="Classes_button_button">立即约课</button>
        </div>
      </div>
   </div>
@@ -10,12 +10,23 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    tiao(){
+      this.$router.push({
+        path:'/oto'
+      })
+    }
+  },
 }
 </script>
 
 <style scoped>
-.Goclass_button_button{
+.Classes_button_button{
   background: rgb(235, 97, 0);
   border: none;
   color: white;

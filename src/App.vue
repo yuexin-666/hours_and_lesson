@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <router-view/>
-    <tabBar v-show="$route.meta.tabberShow"/>
-=======
+    <!-- <router-view/> -->
+    <!-- <tabBar v-show="$route.meta.tabberShow"/> -->
     <router-view />
     <tabBar />
     <div class="leaveMsg" id="leaveMsg" @touchmove.prevent ="move">
       <span class="iconfont icon-mail"></span>
     </div>
->>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
   </div>
 </template>
 
