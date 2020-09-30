@@ -241,5 +241,8 @@ export default {
     margin-left: 4rem;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
 </style>

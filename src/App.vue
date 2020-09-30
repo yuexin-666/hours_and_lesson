@@ -2,8 +2,11 @@
   <div id="app">
     <router-view/>
     <tabBar v-show="$route.meta.tabberShow"/>
+<<<<<<< HEAD
     
     <tabBar />
+=======
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
     <div class="leaveMsg" id="leaveMsg" @touchmove.prevent ="move">
       <span class="iconfont icon-mail"></span>
     </div>

@@ -5,10 +5,19 @@ import store from './store'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
+<<<<<<< HEAD
 import axios from 'axios'
 Vue.prototype.$axios=axios
+=======
+
+import axios from 'axios'
+<<<<<<< HEAD
+Vue.prototype.$axios = axios
+=======
+
+>>>>>>> 6657e37f7e378a447d5c437b0f3717cc50f198aa
+>>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
 Vue.config.productionTip = false
-Vue.prototype.$axios=axios
 
 new Vue({
   router,
