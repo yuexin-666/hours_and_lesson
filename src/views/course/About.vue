@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div>
     <!-- 顶部 -->
@@ -9,7 +8,6 @@
         </template>
       </van-nav-bar>
 
-      <van-divider :hairline="false" />
     </div>
 
     <!-- 排序 -->
@@ -55,79 +53,43 @@
       </van-dropdown-menu>
     </div>
 
-    <!-- 课程 -->
+    <!-- 课程1 -->
     <div class="lesson">
-      <div class="lesson_item">
+      <div class="lesson_item" v-for="index in 10" :key="index" @click="goDetails">
         <div class="lesson_item_container">
             <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
         <p class="lesson_time">
           <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
         </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
+         <p class="teacher_img"><img src="https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg"><span class="lesson_teacher">李青</span></p>
           <van-divider />
           <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
         </div>
       </div>
 
-       <div class="lesson_item">
+
+      <!-- 课程2 -->
+       <div class="lesson_item" v-for="index in 5" :key="index" @click="goDetails">
         <div class="lesson_item_container">
-            <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
-        <p class="lesson_time">
-          <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
-        </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
+            <p class="lesson_title">初中重点几何知识点————第九讲：用描点法画出二次函数y=-x^2的图像</p>
+        <p class="lesson_time">共1课时</p>
+         <p  class="teacher_img"><img src="https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg"><span class="lesson_teacher">马学斌</span></p>
           <van-divider />
-          <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
+          <p class="lesson_reserve"><span style="color:lightgray">127人已报名</span><span style="margin-left: 4rem;"><span class="iconfont icon-jinbidianji"></span><span style="color:red;">1.00</span></span></p>
         </div>
       </div>
 
-       <div class="lesson_item">
+
+        <div class="lesson_item" v-for="index in 3" :key="index" @click="goDetails">
         <div class="lesson_item_container">
-            <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
-        <p class="lesson_time">
-          <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
-        </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
+            <p class="lesson_title">每时每课——初二英语——形容词和副词最高级的特殊用法知识点</p>
+        <p class="lesson_time">共1课</p>
+         <p class="teacher_img"><img src="https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg"><span class="lesson_teacher">Willa</span></p>
           <van-divider />
-          <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
+          <p class="lesson_reserve"><span>26人已报名</span><span class="lesson_reserve_span">免费</span></p>
         </div>
       </div>
 
-       <div class="lesson_item">
-        <div class="lesson_item_container">
-            <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
-        <p class="lesson_time">
-          <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
-        </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
-          <van-divider />
-          <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
-        </div>
-      </div>
-
-       <div class="lesson_item">
-        <div class="lesson_item_container">
-            <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
-        <p class="lesson_time">
-          <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
-        </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
-          <van-divider />
-          <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
-        </div>
-      </div>
-
-       <div class="lesson_item">
-        <div class="lesson_item_container">
-            <p class="lesson_title">李老师16号到22号地理大课堂开课啦</p>
-        <p class="lesson_time">
-          <span class="iconfont icon-zhongbiao1"></span>03月16日18:30~03月22日   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|共8课
-        </p>
-         <p class="lesson_teacher"><span class="iconfont icon-yonghu"></span><span>李青</span></p>
-          <van-divider />
-          <p class="lesson_reserve"><span>118人已报名</span><span class="lesson_reserve_span">免费</span></p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -153,6 +115,11 @@ export default {
     onConfirm() {
       this.$refs.item.toggle();
     },
+    goDetails(){//点击跳到课程详情
+        this.$router.push({
+          path:"/lessondetails"
+        })
+    }
   },
 };
 </script>
@@ -207,8 +174,8 @@ export default {
 }
 .lesson {
   width: 100%;
-  height: 78vh;
-  background: lightgrey;
+  /* height: 78vh; */
+  background: #f0f2f5;
   overflow: scroll;
 }
 .lesson_item {
@@ -234,25 +201,19 @@ export default {
 }
 .lesson_reserve{
     font-size: 0.22rem;
-    color: lightgray;
 }
 .lesson_reserve_span{
     font-size: 0.32rem;
     color: lightgreen;
     margin-left: 4rem;
 }
-=======
-<template>
-  <div></div>
-</template>
-
-<script>
-export default {
-
+.teacher_img{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-</script>
-
-<style>
-
->>>>>>> f8fa54b46045db3e941a476dfa3a3a9196669510
+.teacher_img img{
+  width: 0.8rem;
+  height: 0.8rem;
+}
 </style>

@@ -10,8 +10,8 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta:{
-      tabberShow:true
+    meta: {
+      tabberShow: true
     }
   },
   //课程
@@ -19,69 +19,78 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('../views/course/About.vue'),
-    meta:{
-      tabberShow:true
+    meta: {
+      tabberShow: true
     }
-    
+  }, 
+  {
+    path: '/lessondetails',//跳转至课程详情页
+    name: 'lessondetails',
+    component: () => import('../views/course/details/LessonDetails.vue'),
+  },
+  {
+    path: '/teacherdetails',//跳转至讲师详情页
+    name: 'teacherdetails',
+    component: () => import('../views/course/details/TeacherDetails.vue'),
+    meta: {
+      tabberShow: false
+    },
   },
   //约课记录
   {
     path: '/lessonHistory',
     name: 'lessonHistory',
     component: () => import('../views/lessonHistory/LessonHistory.vue'),
-<<<<<<< HEAD
-    meta:{
-      tabberShow:true
-    }
-=======
-    children:[
+    meta: {
+      tabberShow: true
+    },
+    children: [
       {
-        path:'/oto',
-        name:'oto',
-        component:()=>import('../views/lessonHistory/oto/Oto.vue')
+        path: '/oto',
+        name: 'oto',
+        component: () => import('../views/lessonHistory/oto/Oto.vue')
       }
     ]
->>>>>>> d6d5efec47dec55f67d77404f927613dfbab6e96
   },
   //练习
   {
     path: '/pricate',
     name: 'pricate',
     component: () => import('../views/pricate/Pricate.vue'),
-    meta:{
-      tabberShow:true
+    meta: {
+      tabberShow: true
     }
   },
   /////////练习子路由
   {
-    path:"/test",
-    name:"Test",
-    component:()=>import('../views/pricate/Test.vue')
+    path: "/test",
+    name: "Test",
+    component: () => import('../views/pricate/Test.vue')
   },
   {
-    path:"/paper",
-    name:"Paper",
-    component:()=>import('../views/pricate/Paper.vue')
+    path: "/paper",
+    name: "Paper",
+    component: () => import('../views/pricate/Paper.vue')
   },
   {
-    path:"/model",
-    name:"Model",
-    component:()=>import('../views/pricate/Model.vue')
+    path: "/model",
+    name: "Model",
+    component: () => import('../views/pricate/Model.vue')
   },
   {
-    path:"/wrong",
-    name:"Wrong",
-    component:()=>import('../views/pricate/Wrong.vue')
+    path: "/wrong",
+    name: "Wrong",
+    component: () => import('../views/pricate/Wrong.vue')
   },
   {
-    path:"/problem",
-    name:"Problem",
-    component:()=>import('../views/pricate/Problem.vue')
+    path: "/problem",
+    name: "Problem",
+    component: () => import('../views/pricate/Problem.vue')
   },
   {
-    path:"/collection",
-    name:"Collection",
-    component:()=>import('../views/pricate/Collection.vue')
+    path: "/collection",
+    name: "Collection",
+    component: () => import('../views/pricate/Collection.vue')
   },
   /////////
   //我的
@@ -89,8 +98,8 @@ const routes = [
     path: '/user',
     name: 'user',
     component: () => import('../views/user/User.vue'),
-    meta:{
-      tabberShow:true
+    meta: {
+      tabberShow: true
     }
   }
   //已删除
