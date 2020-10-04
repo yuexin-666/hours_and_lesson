@@ -170,7 +170,9 @@ methods:{
       this.$router.go(-1)
     },
     onClickRight() {
-      
+      this.$router.push({
+          path:"/serch"
+      })
     },
       onConfirm(date) {
      

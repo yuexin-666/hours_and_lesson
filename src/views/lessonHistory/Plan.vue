@@ -24,70 +24,82 @@
       <p class="time_p">选择时间<span class="time_span">(北京时间)</span></p>
     </div>
     <div class="week">
-        <div class="divdiv">
-          <p>周一</p>
-          <p class="item_describe">9/28</p>
-        </div>
-        <div class="divdiv">
-          <p>周二</p>
-          <p class="item_describe">9/29</p>
-        </div>
-        <div class="divdiv">
-          <p>周三</p>
-          <p class="item_describe">9/30</p>
-        </div>
-        <div class="divdiv">
-          <p>周四</p>
-          <p class="item_describe">10/01</p>
-        </div>
-        <div class="divdiv">
-          <p>周五</p>
-          <p class="item_describe">10/02</p>
-        </div>
+      <div class="divdiv">
+        <p>周一</p>
+        <p class="item_describe">9/28</p>
+      </div>
+      <div class="divdiv">
+        <p>周二</p>
+        <p class="item_describe">9/29</p>
+      </div>
+      <div class="divdiv">
+        <p>周三</p>
+        <p class="item_describe">9/30</p>
+      </div>
+      <div class="divdiv">
+        <p>周四</p>
+        <p class="item_describe">10/01</p>
+      </div>
+      <div class="divdiv">
+        <p>周五</p>
+        <p class="item_describe">10/02</p>
+      </div>
     </div>
-    <div class="hou">
-        立即预约
-    </div>
+    <div class="hou" @click="dian">立即预约</div>
   </div>
 </template>
 
 <script>
+import { Toast } from "vant";
 export default {
   data() {
     return {
-      
-    }
+      active: 1,
+    };
   },
   methods: {
-    tiao(){
+    tiao() {
       this.$router.push({
-        path:'/teacher'
-      })
-    }
+        path: "/teacherdetails",
+      });
+    },
+    dian() {
+      Toast({
+        message: "请选择预约时间",
+        position: "bottom",
+      });
+    },
+    changeType(type) {
+      this.active = type;
+    },
   },
 };
 </script>
 
-<style scope>
+<style>
 .pian_header {
   width: 100%;
   height: 2rem;
   background: rgb(95, 172, 250);
 }
+
 .pian_header_hea {
   display: flex;
   justify-content: space-between;
 }
+
 .oto_header_mid {
   font-size: 0.35rem;
   color: white;
 }
+
 .bai {
   width: 90%;
   height: 1.7rem;
   background: white;
   margin: 0 auto;
 }
+
 .item {
   margin-top: 0.2rem;
   width: 90%;
@@ -99,11 +111,13 @@ export default {
   justify-content: space-around;
   margin-top: 0.5rem;
 }
+
 .item div {
   width: 80%;
   height: 100%;
   /* line-height: 100%; */
 }
+
 .item img {
   width: 1rem;
   height: 1rem;
@@ -111,9 +125,11 @@ export default {
   /* line-height:100%; */
   margin-top: 0.2rem;
 }
+
 .describe {
   color: rgb(177, 174, 174);
 }
+
 .anniu {
   width: 1.5rem;
   height: 0.7rem;
@@ -123,6 +139,7 @@ export default {
   border-radius: 30%;
   margin-top: 0.5rem;
 }
+
 .time {
   width: 90%;
   height: 0.4rem;
@@ -130,16 +147,19 @@ export default {
   margin: 0 auto;
   margin-top: 0.5rem;
 }
+
 .time_p {
   font-size: 0.3rem;
   color: gray;
   margin-left: 0.2rem;
 }
+
 .time_span {
   font-size: 0.1rem;
   line-height: 0.4rem;
   margin-left: 0.2rem;
 }
+
 .week {
   width: 100%;
   height: 1.5rem;
@@ -147,11 +167,10 @@ export default {
   flex-direction: row;
   flex-wrap: no-wrap;
   margin-top: 0.2rem;
-    
+  overflow-x: scroll;
+  overflow: hidden;
 }
-.item_describe {
-  color: rgb(177, 174, 174);
-}
+
 .divdiv {
   width: 1rem;
   height: 1.5rem;
@@ -160,14 +179,19 @@ export default {
   color: gray;
   text-align: center;
 }
-.hou{
-    width: 100%;
-    height: 1rem;
-    background: orange;
-    color: white;
-    text-align: center;
-    line-height: 1rem;
-    font-size: 0.4rem;
-    margin-top: 6.7rem;
+
+.divdiv:hover {
+  color: orangered;
+}
+
+.hou {
+  width: 100%;
+  height: 1rem;
+  background: orangered;
+  color: white;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.4rem;
+  margin-top: 7.7rem;
 }
 </style>

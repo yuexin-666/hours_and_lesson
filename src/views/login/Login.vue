@@ -1,41 +1,40 @@
 <template>
-
   <div>
-  
-
-  <div class="body">
-    <!-- User-logo -->
-    <div class="user-logo">
-      <img src="../../../public/img/User-logo.png" alt="" />
-    </div>
-    <div class="login">
-      <!-- 表单 -->
-      <div class="from">
-        <van-form @click="name">
-          <van-field
-            v-model="username"
-            placeholder="请输入手机号"
-            class="active"
-          />
-          <van-field
-            v-model="password"
-            type="password"
-            placeholder="请输入密码"
-          />
-          <!-- 验证 -->
-          <div class="proving">
-            <span @click="toFind">找回密码</span>
-            <span>注册/验证码登录</span>
-          </div>
-          <div style="margin: 16px">
-            <van-button round block @click="submit" class="btn"
-              >登录</van-button
-            >
-          </div>
-        </van-form>
+    <div class="body">
+      <!-- User-logo -->
+      <div class="user-logo">
+        <img src="../../../public/img/User-logo.png" alt="" />
+      </div>
+      <div class="login">
+        <!-- 表单 -->
+        <div>
+          <van-form @submit="onSubmit">
+            <van-field
+              name="username"
+              v-model="username"
+              placeholder="请输入手机号"
+              class="active"
+            />
+            <van-field
+              name="password"
+              v-model="password"
+              type="password"
+              placeholder="请输入密码"
+            />
+            <!-- 验证 -->
+            <div class="proving">
+              <span @click="toFind">找回密码</span>
+              <span @click="goregister">注册/验证码登录</span>
+            </div>
+            <div style="margin: 16px">
+              <van-button round block native-type="submit" class="btn"
+                >登录</van-button
+              >
+            </div>
+          </van-form>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -45,27 +44,47 @@ export default {
     return {
       username: "",
       password: "",
+      user: [],
     };
+  },
+  mounted() {
+    let user = localStorage.user;
+    if (user) {
+      this.user = JSON.parse(user);
+    }
   },
   methods: {
     name() {},
-    submit() {
-      this.$router.push({
-        path:"/user"
-      })
+    onSubmit(val) {
+      this.user.forEach((element) => {
+        if (element.username == val.username) {
+          if (element.password == val.password) {
+            localStorage.setItem("token",JSON.stringify(val));
+            this.$router.push({
+              path: "/user",
+            });
+          } else {
+            this.$toast.fail("账号密码错误");
+          }
+        } else {
+          this.$toast.fail("账号密码错误");
+        }
+      });
     },
     // 找回密码
-    toFind(){
-      this.$router.push({path:'/forgetPass'})
-    }
+    toFind() {
+      this.$router.push({ path: "/forgetPass" });
+    },
+    goregister() {
+      this.$router.push({
+        path: "/register",
+      });
+    },
   },
-}
-
-
+};
 </script>
 
 <style>
-
 </style>
 
 
@@ -108,7 +127,7 @@ export default {
   font-size: 0.2rem;
   display: flex;
   justify-content: space-between;
-  color:#999999;
+  color: #999999;
 }
 /* 提交按钮 */
 .btn {

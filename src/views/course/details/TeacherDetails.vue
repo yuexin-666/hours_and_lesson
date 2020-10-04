@@ -1,7 +1,8 @@
 <template>
   <div class="teacherDiv">
     <!-- 导航栏 -->
-    <div class="nav">
+    <div class="first">
+         <div class="nav">
       <p>
         <span><van-icon name="arrow-left" @click="goback"/></span>
         <span style="margin-left: 2.5rem">讲师详情</span>
@@ -20,7 +21,7 @@
           <p style="color: lightgray">女 7年教龄</p>
         </div>
         <div class="teacher_follow">
-          <p>关注</p>
+          <p><span class="follower" v-show="isshow" @click="follow">关注</span><span v-show="areshow" @click="notfollow" style="color:lightgray">已关注</span></p>
         </div>
       </div>
       <div class="teacher_tab">
@@ -30,24 +31,27 @@
         <span>亲和力强</span>
       </div>
     </div>
+    </div>
+ 
 
     <!-- 中间 -->
     <div class="tab">
-      <van-tabs v-model="active">
+      <van-tabs v-model="active" title-active-color="red">
         <van-tab style="background: white" title="讲师介绍">
           <p class="teacher_year">教学年龄 <span>25年</span></p>
           <p class="teacher_year">授课价格 <span>400学习币</span></p>
           <p class="teacher_year">
             老师简介
-            <span
-              >马学兵老师，从2004年起，专注中考数学压轴题15年，专著《挑战终考数学压轴题》近几年服务学生30万。“中考数学压轴题解题策略12件”
+            <span>马学兵老师，从2004年起，专注中考数学压轴题15年，专著《挑战终考数学压轴题》近几年服务学生30万。“中考数学压轴题解题策略12件”
+              涉足40多个市，上海中学高级教师马学兵老师，从2004年起，专注中考数学压轴题15年，专著《挑战终考数学压轴题》近几年服务学生30万。“中考数学压轴题解题策略12件”
+              涉足40多个市，上海中学高级教师马学兵老师，从2004年起，专注中考数学压轴题15年，专著《挑战终考数学压轴题》近几年服务学生30万。“中考数学压轴题解题策略12件”
               涉足40多个市，上海中学高级教师</span
             >
           </p>
         </van-tab>
         <van-tab title="主讲课程">
-          <div class="main" v-for="i in 10" :key="i">
-            <div class="lesson_main">
+          <div class="main">
+            <div class="lesson_main" v-for="i in 10" :key="i">
               <p style="font-size: 0.32rem">
                 初中重点集合知识点——第九讲：用描点法画出二次函数的图像
               </p>
@@ -120,9 +124,9 @@
     </div>
 
     <!-- 底部 -->
-    <!-- <div class="bottom">
+    <div class="bottom">
         <p>立即预约</p>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -132,17 +136,33 @@ export default {
     return {
       activeNames: ["1"],
       value: 5,
+      isshow:true,
+      areshow:false
     };
   },
   methods:{
       goback(){
           this.$router.go(-1)
+      },
+      follow(){
+         this.$toast.success('已关注');
+        this.areshow=true
+        this.isshow=false
+      },
+      notfollow(){
+         this.$toast.fail('取消关注');
+        this.areshow=false
+        this.isshow=true
       }
   }
 };
 </script>
 
 <style scoped>
+.first{
+  width: 100%;
+  height: 30vh;
+}
 .teacherDiv {
   width: 100%;
   height: 100vh;
@@ -176,11 +196,13 @@ export default {
   width: 0.8rem;
   height: 0.8rem;
 }
-.teacher_follow {
-  float: left;
-  margin-left: 2.5rem;
-}
+
 .teacher_follow p {
+  float: left;
+  margin-left: 1.9rem;
+}
+.teacher_follow p  .follower{
+  display: inline-block;
   width: 1.5rem;
   height: 0.7rem;
   background: #ebeefe;
@@ -198,9 +220,9 @@ export default {
   display: inline-block;
   width: 1.5rem;
   height: 0.5rem;
-  background: orange;
+  background: #ffe4d3;
   font-size: 0.32rem;
-  color: red;
+  color: #ea7a2f;
   text-align: center;
   line-height: 0.5rem;
   border-radius: 0.5rem;
@@ -215,6 +237,12 @@ export default {
   display: inline-block;
   margin-left: 1.4rem;
 }
+.tab{
+  width: 100%;
+  height: 60vh;
+  overflow: scroll;
+  margin-top: 0.3rem;
+}
 
 /* 主讲课程 */
 .main {
@@ -225,6 +253,7 @@ export default {
   width: 90%;
   height: 4rem;
   margin-left: 5%;
+  margin-top: 2%;
   border-bottom: 0.05rem solid lightgray;
   background: white;
   border-radius: 0.3rem;
@@ -248,12 +277,13 @@ export default {
   display: inline-block;
   width: 2rem;
   height: 0.5rem;
-  color: orange;
+  color: #ea7a2f;
   font-size: 0.32rem;
   text-align: center;
   line-height: 0.5rem;
-  border: 0.02rem solid orange;
+  border: 0.02rem solid #ea7a2f;
   margin-left: 0.04rem;
+  margin-top: 0.09rem;
 }
 .right_icon {
   display: inline-block;
@@ -288,19 +318,22 @@ export default {
   line-height: 0.5rem;
   color: lightgray;
   margin-left: 0.32rem;
+  margin-top: 0.5rem;
 }
 
 /* 底部预约 */
 .bottom{
     width: 100%;
-    height: 1rem;
-    background: orangered;
-    text-align: center;
-    line-height: 1rem;
+    height: 10vh;
     position: absolute;
     bottom:0rem;
 }
 .bottom p{
+     width: 100%;
+    height: 100%;
+    background: orangered;
+    text-align: center;
+    line-height: 7vh;
     font-size: 0.35rem;
     color: white;
 }

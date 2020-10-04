@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="coupon_box">
     <van-nav-bar
       title="我的优惠卷"
       left-arrow
@@ -8,7 +8,7 @@
     <van-tabs v-model="active">
       <van-tab title="未使用">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无优惠卷"
           v-if="$route.query.val != 1"
         >
@@ -16,7 +16,7 @@
       </van-tab>
       <van-tab title="已使用">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无优惠卷"
           v-if="$route.query.val != 1"
         >
@@ -24,7 +24,7 @@
       </van-tab>
       <van-tab title="已过期">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无优惠卷"
           v-if="$route.query.val != 1"
         >
@@ -49,5 +49,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.coupon_box{
+  width: 100%;
+  height: 100vh;
+  background-color: #F0F2F5;
+}
 </style>

@@ -46,7 +46,7 @@
         <div class="last_left">
           <van-collapse-item title="标题2">
             <div class="paper_content_left">
-              <div style="height:6rem">
+              <div style="height: 6rem">
                 <Left
                   :leftList="leftList"
                   :defaultIndex="defaultIndex"
@@ -58,10 +58,10 @@
         </div>
       </van-collapse>
     </div>
-      
-      <div style="width:100vw;">
-        <img src="../../../public/img/机器人.png" alt="">
-      </div>
+
+    <div style="" class="imgDiv">
+      <img src="../../../public/img/机器人.png" alt="" />
+    </div>
   </div>
 </template>
 
@@ -132,6 +132,14 @@ export default {
 </script>
 
 <style scoped>
+.imgDiv {
+  width: 20vw;
+  height: 30vw;
+  position: absolute;
+  top: 4rem;
+  left: 20%;
+  z-index: -1;
+}
 .right_item_ch {
   /* background-color: rgba(119, 119, 119, 0.664); */
   width: 100%;

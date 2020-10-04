@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="collect_box">
        <van-nav-bar
       title="我的收藏"
       left-arrow
@@ -7,7 +7,7 @@
      >
        </van-nav-bar>
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无收藏"
         >
         </van-empty>
@@ -24,5 +24,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.collect_box{
+  width: 100%;
+  height: 100vh;
+  background-color: #F0F2F5;
+}
 </style>

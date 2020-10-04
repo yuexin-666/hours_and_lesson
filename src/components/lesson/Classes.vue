@@ -18,9 +18,8 @@ export default {
   methods: {
     tiao(){
       this.$router.push({
-        path:'/oto'
+        path:'/tutoring'
       })
-      console.log('跳过来了')
     }
   },
 }

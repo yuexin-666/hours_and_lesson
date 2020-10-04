@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="order_box">
     <van-nav-bar :title="title" left-arrow @click-left="onClickLeft">
     </van-nav-bar>
     <van-tabs v-model="active">
@@ -26,7 +26,7 @@
         </div>
 
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无订单"
           v-if="$route.query.val != 1"
         >
@@ -34,7 +34,7 @@
       </van-tab>
       <van-tab title="待支付">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无订单"
         >
         </van-empty>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无订单"
           v-if="$route.query.val != 1"
         >
@@ -70,7 +70,7 @@
       </van-tab>
       <van-tab title="已取消">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="暂无订单"
         >
         </van-empty>
@@ -109,6 +109,11 @@ export default {
 </script>
 
 <style scoped>
+.order_box{
+  width: 100%;
+  height: 100vh;
+  background-color: #F0F2F5;
+}
 .order_item {
   margin: 0.3rem;
   padding: 0.2rem;

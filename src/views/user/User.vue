@@ -12,8 +12,11 @@
                 />
               </div>
               <div class="extra">
-                <div class="name">
+                <div class="name" v-if="token.length < 0">
                   <span @click="goOther('/login')">登录/注册</span>
+                </div>
+                <div class="name" v-if="token.length > 0">
+                  <span @click="goOther('/login')">135*****9999</span>
                 </div>
                 <p><van-icon name="edit" /></p>
               </div>
@@ -37,7 +40,7 @@
             </div>
           </div>
           <div class="to_set">
-            <span @click="goOther('/coach')">去约课</span>
+            <span @click="goOther('/oto')">去约课</span>
           </div>
         </div>
       </div>
@@ -77,7 +80,7 @@
 
         <div class="menu_box_item">
           <div class="menu_box_item_title">订单相关</div>
-          <div class="menu_box_item_contant">
+          <div class="menu_box_item_contant dingdan">
             <van-grid gutter="" icon-size="40px" column-num="4">
               <van-grid-item text="课程订单" @click="goOrder(1)">
                 <template #icon>
@@ -109,10 +112,10 @@
               </van-grid-item>
               <van-grid-item text="学习卡" @click="goOther('/userCard')">
                 <template #icon>
-                  <span class="iconfont icon-icon-test"></span> 
+                  <span class="iconfont icon-icon-test"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="会员">
+              <van-grid-item text="会员" @click="goOther('/userVip')">
                 <template #icon>
                   <span class="iconfont icon-huiyuan"></span>
                 </template>
@@ -125,19 +128,24 @@
           <div class="menu_box_item_title">自助服务</div>
           <div class="menu_box_item_contant">
             <van-grid gutter="" icon-size="40px" column-num="4">
-              <van-grid-item text="我的消息">
+              <van-grid-item text="我的消息" @click="goOther('/massage')">
                 <template #icon>
                   <span class="iconfont icon-wodexiaoxi"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="意见反馈">
+              <van-grid-item text="意见反馈" @click="goOther('/feedback')">
                 <template #icon>
                   <span class="iconfont icon-mail"></span>
                 </template>
               </van-grid-item>
-              <van-grid-item text="在线客服">
+              <van-grid-item text="在线客服" @click="goOther('/custome')">
                 <template #icon>
                   <span class="iconfont icon-kefu1"></span>
+                </template>
+              </van-grid-item>
+              <van-grid-item text="设置" @click="goOther('/setting')">
+                <template #icon>
+                  <span class="iconfont icon-shezhi"></span>
                 </template>
               </van-grid-item>
             </van-grid>
@@ -148,16 +156,16 @@
       <div class="bottom_b"></div>
     </div>
 
-
-
     <van-overlay :show="show" @click="show = false" z-index="300">
       <div class="wrapper">
         <div class="block">
-          <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2020RSph8UnBIH1601365794.png" alt="">
+          <img
+            src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2020RSph8UnBIH1601365794.png"
+            alt=""
+          />
         </div>
       </div>
     </van-overlay>
-
   </div>
 </template>
 
@@ -168,23 +176,25 @@ export default {
       show: false,
     };
   },
+  computed: {
+    token: function () {
+      return localStorage.token;
+    },
+  },
   methods: {
-    goCoach() {
-      console.log("goCoach");
-    },
-    goOther(path){
+    goOther(path) {
       this.$router.push({
-        path
-      })
+        path,
+      });
     },
-    goOrder(val){
+    goOrder(val) {
       this.$router.push({
-        path:"/order",
-        query:{
-          val
-        }
-      })
-    }
+        path: "/order",
+        query: {
+          val,
+        },
+      });
+    },
   },
 };
 </script>
@@ -354,6 +364,7 @@ export default {
 }
 .menu_box_item_contant .iconfont {
   color: #ffaf00;
+  font-size: .48rem;
 }
 .bottom_b {
   height: 2rem;
@@ -371,8 +382,14 @@ export default {
   height: 90vh;
   background-color: #fff;
 }
-.block img{
+.block img {
   width: 100%;
   height: 100%;
+}
+.dingdan .iconfont{
+  color: #FC5500;
+}
+.mine_item_count{
+  font-size: .5rem;
 }
 </style>

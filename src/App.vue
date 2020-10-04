@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div class="leaveMsg" id="leaveMsg" @touchmove.prevent ="move">
+    <router-view />
+    <tabBar v-show="$route.meta.tabberShow"/>
+    <div class="leaveMsg" id="leaveMsg" @touchmove.prevent ="move" @click="goCustome">
       <span class="iconfont icon-mail"></span>
     </div>
   </div>
@@ -13,6 +15,11 @@ export default {
     tabBar,
   },
   methods: {
+    goCustome(){
+      this.$router.push({
+        path:"/custome"
+      })
+    },
     move(event) {
       var ss = document.querySelector("#leaveMsg")
       var x = event.targetTouches[0].clientX;

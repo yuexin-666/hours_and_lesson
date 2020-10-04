@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="myStudy_box">
     <van-nav-bar
       title="我的学习"
       left-arrow
@@ -17,7 +17,7 @@
     >
       <van-tab title="直播课(0)">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="还没有课程,快去选择课程学习吧"
         >
           <van-button type="primary" size="mini" color="#EB6100" @click="goAbout"
@@ -41,7 +41,7 @@
       </van-tab>
       <van-tab title="音频课(0)">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="还没有课程,快去选择课程学习吧"
         >
           <van-button type="primary" size="mini" color="#EB6100" @click="goAbout"
@@ -51,7 +51,7 @@
       </van-tab>
       <van-tab title="图文课(0)">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="还没有课程,快去选择课程学习吧"
         >
           <van-button type="primary" size="mini" color="#EB6100" @click="goAbout"
@@ -61,7 +61,7 @@
       </van-tab>
       <van-tab title="面授课(0)">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="还没有课程,快去选择课程学习吧"
         >
           <van-button type="primary" size="mini" color="#EB6100" @click="goAbout"
@@ -71,7 +71,7 @@
       </van-tab>
       <van-tab title="会员课(0)">
         <van-empty
-          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          image="http://localhost:8080/img/kong.png"
           description="还没有课程,快去选择课程学习吧"
         >
           <van-button type="primary" size="mini" color="#EB6100" @click="goAbout"
@@ -94,7 +94,11 @@ export default {
     onClickLeft() {
         window.history.back()
     },
-    onClickRight() {},
+    onClickRight() {
+      this.$router.push({
+        path:"/calendar"
+      })
+    },
     goAbout(){
         this.$router.push({
             path:"/about"
@@ -105,6 +109,11 @@ export default {
 </script>
 
 <style scoped>
+.myStudy_box{
+   width: 100%;
+  height: 100vh;
+  background-color: #F0F2F5;
+}
 .tabs_box {
   padding: 0.26667rem 0.4rem;
   box-sizing: border-box;

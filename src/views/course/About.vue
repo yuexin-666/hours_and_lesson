@@ -1,20 +1,14 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 <template>
   <div>
     <!-- 顶部 -->
     <div class="top">
       <van-nav-bar title="特色课">
         <template #right>
-          <van-icon name="search" size="18" color="black" />
+          <van-icon name="search" size="18" color="black" @click="gosearch"/>
         </template>
       </van-nav-bar>
-<<<<<<< HEAD
-=======
 
->>>>>>> e1cc1b39262f306b15390511055be7e022f67ada
     </div>
 
     <!-- 排序 -->
@@ -126,6 +120,11 @@ export default {
         this.$router.push({
           path:"/lessondetails"
         })
+    },
+    gosearch(){//点击跳转至搜索页
+      this.$router.push({
+        path:"/serch"
+      })
     }
   },
 };
@@ -213,12 +212,8 @@ export default {
     font-size: 0.32rem;
     color: lightgreen;
     margin-left: 4rem;
-<<<<<<< HEAD
 } 
-</style>>
-=======
-}
-<<<<<<< HEAD
+
 .teacher_img{
   display: flex;
   justify-content: flex-start;
@@ -228,16 +223,4 @@ export default {
   width: 0.8rem;
   height: 0.8rem;
 }
-=======
-
-<<<<<<< HEAD
-
-=======
->>>>>>> acd86914436c8ee0aa725d48905aeef3c14d292a
-<<<<<<< HEAD
->>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
 </style>
-=======
-</style>
->>>>>>> 1371a801b5778e09ca28977e1c383f391a8d290b
->>>>>>> aacbc6b1b3d3a63e47865ba5711bae4311f5726c
